@@ -10,7 +10,9 @@
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
-    "prepare": "install-peers"
+    "prepare": "install-peers",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "files": [
     "dist"
@@ -24,10 +26,19 @@
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
+    "@storybook/addon-actions": "^6.4.20",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-interactions": "^6.4.20",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.4.20",
+    "@storybook/testing-library": "^0.0.9",
     "@testing-library/react": "^13.0.0",
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.43",
     "babel-jest": "^27.5.1",
+    "babel-loader": "^8.2.4",
+    "css-loader": "5.2.6",
     "identity-obj-proxy": "^3.0.0",
     "install-peers-cli": "^2.2.0",
     "jest": "^27.5.1",
@@ -38,11 +49,14 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.49.10",
+    "sass-loader": "10.1.1",
+    "style-loader": "2.0.0",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"
   },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  }
+  },
+  "dependencies": {}
 }
