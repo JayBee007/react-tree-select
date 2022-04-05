@@ -13,7 +13,6 @@ export default {
   component: TreeComponent
 } as ComponentMeta<typeof TreeComponent>
 
-// @ts-ignore
 export const Tree: ComponentStory<typeof TreeComponent> = () => (
   <TreeComponent
     data={makeTree()}

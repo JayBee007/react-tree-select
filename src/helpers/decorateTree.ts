@@ -13,9 +13,7 @@ function createNode<T extends IdObj> (
     parent,
     children,
     isOpen,
-    // @ts-ignore
     model,
-    rowIndex: null,
     isSelected: false
   }
 }
@@ -34,8 +32,7 @@ function access (obj: any, accessor: string | boolean | Function) {
 
 export function decorateTree<T extends IdObj> (
   model: T,
-  getChildren: TreeProps<T>['getChildren'] = 'children',
-  openByDefault: boolean = true
+  getChildren: TreeProps<T>['getChildren'] = 'children'
 ): TreeNode<T> {
   function visitSelfAndChildren (
     model: T,

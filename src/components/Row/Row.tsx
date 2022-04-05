@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { CSSProperties, useMemo, useRef } from 'react'
 
 import { useTreeContext } from '@providers'
@@ -49,6 +48,7 @@ export const Row = React.memo(function Row (props:RowProps) {
   return (
       <TreeNode
         data={node.model}
+        // @ts-ignore
         innerRef={el}
         styles={styles}
         state={state}

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { forwardRef } from 'react'
 import { FixedSizeList } from 'react-window'
 
@@ -41,7 +40,6 @@ export function List () {
       height={tree.height}
       width={tree.width}
       itemSize={tree.rowHeight}
-      // @ts-ignore
       itemKey={(index) => tree.service.visibleNodes[index]?.id || index}
       outerElementType={OuterElement}
       // @ts-ignore

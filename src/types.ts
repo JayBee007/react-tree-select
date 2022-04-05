@@ -26,13 +26,12 @@ export interface TreeProps<T> {
 }
 export type TreeNode<T = unknown> = {
     id: string;
-    nodeData: T;
+    model: T;
     level: number;
     children: TreeNode<T>[] | null;
     parent: TreeNode<T> | null;
     isOpen: boolean;
     isSelected: boolean;
-    rowIndex: number | null;
 };
 
 export type TreeNodeState = {
@@ -63,7 +62,8 @@ export type StateContext<T> = {
 };
 
 export type NodeHandlers = {
-  toggle: MouseEventHandler;
+  toggleNodeSelection: MouseEventHandler;
+  toggleNode: MouseEventHandler;
 };
 
 export type TreeNodeRendererProps<T> = {
