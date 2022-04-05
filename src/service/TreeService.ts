@@ -20,6 +20,10 @@ export class TreeService<T = unknown> {
     this.list = list
   }
 
+  updateSearch (search:string) {
+    this.dispatch(actions.updateSearch(search))
+  }
+
   toggleSelection (id:string, isSelected: boolean) {
     this.dispatch(actions.toggleNodeSelection(id, isSelected))
   }
@@ -29,7 +33,13 @@ export class TreeService<T = unknown> {
   }
 
   get visibleNodes () {
-    return createList(this.state.root)
+    const list = createList(this.state.root)
+
+    if (this.state.searchString) {
+      // @ts-ignore
+      return list.filter(elm => elm.model.name.toLowerCase().indexOf(this.state.searchString.toLowerCase()) > -1)
+    }
+    return list
   }
 }
 

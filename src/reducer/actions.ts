@@ -1,4 +1,4 @@
-import { TOGGLE_NODE_SELECTION, TOGGLE_NODE_VISIBLITY } from './constants'
+import { TOGGLE_NODE_SELECTION, TOGGLE_NODE_VISIBLITY, UPDATE_SEARCH } from './constants'
 
 const toggleNodeSelection = (id:string, isSelected:boolean) => ({
   type: TOGGLE_NODE_SELECTION,
@@ -12,7 +12,13 @@ export const toggleNodeVisiblity = (id: string, isOpen: boolean) => ({
   isOpen
 })
 
+export const updateSearch = (search:string) => ({
+  type: UPDATE_SEARCH,
+  search
+})
+
 export const actions = {
   toggleNodeSelection,
-  toggleNodeVisiblity
+  toggleNodeVisiblity,
+  updateSearch
 }
