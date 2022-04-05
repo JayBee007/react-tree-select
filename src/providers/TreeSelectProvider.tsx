@@ -9,9 +9,10 @@ import { initialState } from '@reducer/initialState'
 import { TreeSelectProviderProps, TreeContextType } from '@types'
 
 export function TreeSelectProvider<T> (props: TreeSelectProviderProps<T>) {
-  const [state, dispatch] = useReducer(reducer, initialState())
+  const [state, dispatch] = useReducer(reducer, initialState(props.root))
 
   const list = useRef<FixedSizeList>()
+  // @ts-ignore
   const service = useTreeService<T>(state, dispatch, props, list.current)
 
   const value = useMemo<TreeContextType<T>>(

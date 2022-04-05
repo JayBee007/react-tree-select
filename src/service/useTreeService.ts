@@ -7,11 +7,12 @@ import { StateContext, TreeSelectProviderProps } from '@types'
 import { TreeService } from './TreeService'
 
 export function useTreeService<T> (
-  state: StateContext,
+  state: StateContext<T>,
   dispatch: Dispatch<Action>,
   props: TreeSelectProviderProps<T>,
   list: FixedSizeList | undefined
 ) {
-  const service = useMemo(() => new TreeService<T>(dispatch, state, props, list), [])
+  const service = useMemo(() => new TreeService<T>(dispatch, state, props, list), [state])
+
   return service
 }

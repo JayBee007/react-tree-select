@@ -71,5 +71,8 @@
     "react-dom": "^18.0.0",
     "react-window": "^1.8.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "memoize-one": "^6.0.0",
+    "react-feather": "^2.0.9"
+  }
 }

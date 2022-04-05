@@ -1,16 +1,26 @@
 import React from 'react'
-
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
+import { List } from 'src/components'
+
 import { Tree as TreeComponent } from './Tree'
+import { makeTree } from 'src/data/makeTree'
+
+import 'src/index.scss'
 
 export default {
   title: 'Tree',
   component: TreeComponent
 } as ComponentMeta<typeof TreeComponent>
 
-function FutureNode () {
-  return (<p>Future Node</p>)
-}
 // @ts-ignore
-export const Tree: ComponentStory<typeof TreeComponent> = () => <TreeComponent height={300} indent={24}><FutureNode /></TreeComponent>
+export const Tree: ComponentStory<typeof TreeComponent> = () => (
+  <TreeComponent
+    data={makeTree()}
+    height={500}
+    indent={24}
+    width={250}
+    onClick={(e) => console.log('e', e)}>
+      <List />
+  </TreeComponent>
+)
