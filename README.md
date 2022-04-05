@@ -2,6 +2,8 @@
 
 A hierarchical select component using react
 
+Demo: [https://react-select-tree.surge.sh](https://react-select-tree.surge.sh)
+
 ## Usage
 
 Tree provider component accepts the following props
