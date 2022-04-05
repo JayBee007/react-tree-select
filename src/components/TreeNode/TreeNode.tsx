@@ -1,8 +1,7 @@
-// @ts-nocheck
 import React from 'react'
 import { ChevronDown, ChevronRight } from 'react-feather'
 
-import { TreeNodeRendererProps, Data } from '@types'
+import { TreeNodeRendererProps } from '@types'
 
 const color = '#999'
 function ToggleButton (props:any) {
@@ -20,11 +19,13 @@ function ToggleButton (props:any) {
   }
 }
 
-export function TreeNode (props:TreeNodeRendererProps<Data>) {
+export function TreeNode (props:TreeNodeRendererProps<unknown>) {
   const { state, data, innerRef, styles, handlers } = props
+  // @ts-ignore
   const hasChildren = !!data.children
   const open = state.isOpen
   const selected = state.isSelected
+  // @ts-ignore
   const name = data.name
   return (
     <div
@@ -41,6 +42,7 @@ export function TreeNode (props:TreeNodeRendererProps<Data>) {
                 isSelected={state.isSelected}
             />
             <div>
+              {/* @ts-ignore */}
               <input type="checkbox" checked={selected} value={data.id} onChange={handlers.toggleNodeSelection} />
             </div>
             <span>{name}</span>
