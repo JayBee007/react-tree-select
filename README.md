@@ -51,3 +51,4 @@ TODO
 -   Testing
 -   Separate state, other data models from context
 -   Check for extra re-renders
+-   Proper way to extend styling
