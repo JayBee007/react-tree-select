@@ -1,7 +1,7 @@
-import { StateContext } from '@types'
+import { StateContext, TreeNode } from '@types'
 
-export const initialState = (): StateContext => ({
-  visibleIds: [],
-  selectedIds: [],
-  searchString: ''
+export const initialState = (root: TreeNode<unknown>): StateContext<unknown> => ({
+  selectedNodes: new Set(),
+  searchString: '',
+  root
 })

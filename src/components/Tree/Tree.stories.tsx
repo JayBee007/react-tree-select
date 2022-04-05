@@ -6,6 +6,8 @@ import { List } from 'src/components'
 import { Tree as TreeComponent } from './Tree'
 import { makeTree } from 'src/data/makeTree'
 
+import 'src/index.scss'
+
 export default {
   title: 'Tree',
   component: TreeComponent
@@ -17,7 +19,7 @@ export const Tree: ComponentStory<typeof TreeComponent> = () => (
     data={makeTree()}
     height={500}
     indent={24}
-    width={200}
+    width={250}
     onClick={(e) => console.log('e', e)}>
       <List />
   </TreeComponent>

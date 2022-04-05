@@ -56,10 +56,10 @@ export type TreeContextType<T> = TreeSelectProviderProps<T> & {
     list: MutableRefObject<FixedSizeList | undefined>;
 };
 
-export type StateContext = {
-    visibleIds: string[];
-    selectedIds: string[];
+export type StateContext<T> = {
+    selectedNodes: Set<T>;
     searchString: string;
+    root: TreeNode<T>;
 };
 
 export type NodeHandlers = {

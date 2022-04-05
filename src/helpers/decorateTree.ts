@@ -15,7 +15,8 @@ function createNode<T extends IdObj> (
     isOpen,
     // @ts-ignore
     model,
-    rowIndex: null
+    rowIndex: null,
+    isSelected: false
   }
 }
 

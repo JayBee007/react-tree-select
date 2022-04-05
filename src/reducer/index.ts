@@ -1,7 +1,8 @@
 import { StateContext } from '@types'
 
+import { findAndToggleNodes, toggleNodeSelection } from './helper'
 import { actions } from './actions'
-import { TOGGLE_NODE_SELECTION } from './constants'
+import { TOGGLE_NODE_SELECTION, TOGGLE_NODE_VISIBLITY } from './constants'
 
 type ActionObj = {
   [Prop in keyof typeof actions]: ReturnType<typeof actions[Prop]>;
@@ -9,10 +10,14 @@ type ActionObj = {
 
 export type Action = ActionObj[keyof ActionObj];
 
-export function reducer (state: StateContext, action: Action): StateContext {
+export function reducer (state: StateContext<unknown>, action: Action): StateContext<unknown> {
   switch (action.type) {
     case TOGGLE_NODE_SELECTION:
-      return state
+      // @ts-ignore
+      return toggleNodeSelection(state, action.id, action.isSelected)
+    case TOGGLE_NODE_VISIBLITY:
+      // @ts-ignore
+      return findAndToggleNodes(state, action.id, action.isOpen)
     default:
       return state
   }

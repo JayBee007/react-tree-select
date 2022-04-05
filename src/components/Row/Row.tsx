@@ -61,14 +61,16 @@ export const Row = React.memo(function Row (props:RowProps) {
   //   const next = tree.service.visibleNodes[index + 1] || null
   //   const prev = tree.service.visibleNodes[index - 1] || null
   const isOpen = node.isOpen
+  const isSelected = node.isSelected
   const indent = tree.indent * node.level
   const el = useRef<HTMLDivElement | null>(null)
 
   const state = useMemo(() => {
     return {
-      isOpen
+      isOpen,
+      isSelected
     }
-  }, [isOpen])
+  }, [isOpen, isSelected])
 
   const styles = useMemo(
     () => ({
@@ -80,9 +82,13 @@ export const Row = React.memo(function Row (props:RowProps) {
 
   const handlers = useMemo(() => {
     return {
-      toggleParent: (e: React.MouseEvent) => {
+      toggleNodeSelection: (e:React.MouseEvent) => {
         e.stopPropagation()
-        // tree.service.toggleParent(node.id, !node.isOpen)
+        tree.service.toggleSelection(node.id, !node.isSelected)
+      },
+      toggleNode: (e: React.MouseEvent) => {
+        e.stopPropagation()
+        tree.service.toggleNodeVisiblity(node.id, !node.isOpen)
       }
     }
   }, [tree])

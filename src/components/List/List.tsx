@@ -16,7 +16,7 @@ const OuterElement = forwardRef(function Outer (
       <div ref={ref} {...rest} onClick={tree.onClick} onContextMenu={tree.onContextMenu}>
         <div
           style={{
-            height: tree.service.visibleIds.length * tree.rowHeight,
+            height: tree.service.visibleNodes.length * tree.rowHeight,
             width: '100%',
             overflow: 'hidden',
             position: 'absolute',

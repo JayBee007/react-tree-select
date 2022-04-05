@@ -6,17 +6,17 @@ import { TreeNodeRendererProps, Data } from '@types'
 
 const color = '#999'
 function ToggleButton (props:any) {
-  const { isOpen, isSelected, toggle, isParent } = props
+  const { isOpen, toggle, isParent } = props
 
   if (isParent) {
     const Icon = isOpen ? ChevronDown : ChevronRight
     return (
     <button tabIndex={-1} onClick={toggle}>
-        <Icon size={12} stroke={isSelected ? 'white' : color} />
+        <Icon size={12} stroke={color} />
     </button>
     )
   } else {
-    return <div />
+    return <div className='spacer'/>
   }
 }
 
@@ -25,22 +25,26 @@ export function TreeNode (props:TreeNodeRendererProps<Data>) {
   const hasChildren = !!data.children
   // eslint-disable-next-line no-unused-vars
   const open = state.isOpen
-  //   const name = data.name
-
+  const selected = state.isSelected
+  const name = data.name
   return (
     <div
         ref={innerRef}
         style={styles.row}
-        className=""
-        onClick={(e) => handlers.select(e)}
+        className="row"
+        // onClick={(e) => handlers.select(e)}
     >
-        <div className="node-row" style={styles.indent}>
+        <div className="row-contents" style={styles.indent}>
             <ToggleButton
-                toggle={handlers.toggleParent}
+                toggle={handlers.toggleNode}
                 isOpen={open}
                 isParent={hasChildren}
                 isSelected={state.isSelected}
             />
+            <div>
+              <input type="checkbox" checked={selected} value={data.id} onChange={handlers.toggleNodeSelection} />
+            </div>
+            <span>{name}</span>
         </div>
     </div>
   )
