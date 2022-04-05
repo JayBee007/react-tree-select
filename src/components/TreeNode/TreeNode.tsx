@@ -23,7 +23,6 @@ function ToggleButton (props:any) {
 export function TreeNode (props:TreeNodeRendererProps<Data>) {
   const { state, data, innerRef, styles, handlers } = props
   const hasChildren = !!data.children
-  // eslint-disable-next-line no-unused-vars
   const open = state.isOpen
   const selected = state.isSelected
   const name = data.name

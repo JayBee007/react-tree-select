@@ -22,7 +22,6 @@ export function Tree<T extends IdObj> (props: TreeProps<T>) {
             height={props.height === undefined ? 500 : props.height}
             indent={props.indent === undefined ? 24 : props.indent}
             rowHeight={props.rowHeight === undefined ? 24 : props.rowHeight}
-            // @ts-ignore
             root={root}
         >
             {props.children}

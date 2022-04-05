@@ -61,17 +61,47 @@ body {
   
   .row-contents input {
     margin:0;
-	border:0;
-	padding:0;
-	display:inline-block;
-	vertical-align:middle;
-	white-space:normal;
-	background:none;
-	line-height:1;
-	margin-right: 5px;
+    border:0;
+    padding:0;
+    display:inline-block;
+    vertical-align:middle;
+    white-space:normal;
+    background:none;
+    line-height:1;
+    margin-right: 5px;
     border: none;
     outline: none;
-	/* Browsers have different default form fonts */
-	font-size:13px;
-	font-family:Arial;
-  }  
+    /* Browsers have different default form fonts */
+    font-size:13px;
+    font-family:Arial;
+  }
+
+  .tags {
+    font-size: 14px;
+    margin: 0 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .tags > :not(:last-child) {
+      margin-right: 5px;
+      margin-bottom: 5px;
+  }
+
+  .tag {
+    font-size: 16px;
+    border: 1px solid #999;
+    background: none;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px;
+  }
+
+  .tag-icon {
+    cursor: pointer;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+  }

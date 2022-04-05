@@ -1,1 +1,1 @@
-export { Tree, List, TreeNode, Row } from './components'
+export { Tree, List, TreeNode, Row, Tags } from './components'

@@ -36,7 +36,9 @@ function selectNodes (node:TreeNode, select:boolean, selectedNodes: Set<unknown>
   }
 
   if (!node.isSelected) {
-    selectedNodes.delete(node)
+    // @ts-ignore
+    const temp = [...selectedNodes].find(obj => obj.id === node.id)
+    selectedNodes.delete(temp)
   }
 
   if (node.children) {

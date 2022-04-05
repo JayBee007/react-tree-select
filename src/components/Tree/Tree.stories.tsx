@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { List } from 'src/components'
+import { List, Tags } from 'src/components'
 
 import { Tree as TreeComponent } from './Tree'
 import { makeTree } from 'src/data/makeTree'
@@ -21,6 +21,9 @@ export const Tree: ComponentStory<typeof TreeComponent> = () => (
     indent={24}
     width={250}
     onClick={(e) => console.log('e', e)}>
-      <List />
+      <React.Fragment>
+        <List />
+        <Tags />
+      </React.Fragment>
   </TreeComponent>
 )
