@@ -36,7 +36,8 @@
       "@reducer/initialState":["./src/reducer/initialState"],
       "@providers":["./src/providers"],
       "@helpers":["./src/helpers"],
-      "@components": ["./src/components"]
+      "@components": ["./src/components"],
+      "@utils": ["./src/utils"]
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
