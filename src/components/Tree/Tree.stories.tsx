@@ -18,8 +18,7 @@ export const Tree: ComponentStory<typeof TreeComponent> = () => (
     data={makeTree()}
     height={500}
     indent={24}
-    width={250}
-    onClick={(e) => console.log('e', e)}>
+    width={300}>
       <React.Fragment>
         <Search />
         <List />

@@ -4,6 +4,7 @@ import { ChevronDown, ChevronRight } from 'react-feather'
 import { TreeNodeRendererProps } from '@types'
 
 const color = '#999'
+
 function ToggleButton (props:any) {
   const { isOpen, toggle, isParent } = props
 
@@ -32,7 +33,6 @@ export function TreeNode (props:TreeNodeRendererProps<unknown>) {
         ref={innerRef}
         style={styles.row}
         className="row"
-        // onClick={(e) => handlers.select(e)}
     >
         <div className="row-contents" style={styles.indent}>
             <ToggleButton

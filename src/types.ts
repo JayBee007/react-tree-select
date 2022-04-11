@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactElement, MutableRefObject, Ref, CSSProperties } from 'react'
+import { MouseEventHandler, ReactElement, MutableRefObject, CSSProperties } from 'react'
 import { FixedSizeList } from 'react-window'
 
 import { TreeService } from '@service'
@@ -20,9 +20,6 @@ export interface TreeProps<T> {
   rowHeight?: number;
   indent?: number;
   getChildren?: string | ((d: T) => T[]);
-  className?: string | undefined;
-  handle?: Ref<TreeService<T>>;
-  onClick?: MouseEventHandler;
 }
 export type TreeNode<T = unknown> = {
     id: string;
